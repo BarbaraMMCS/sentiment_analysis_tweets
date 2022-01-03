@@ -21,7 +21,8 @@ def main():
     explore_dataframe(dataframe)
 
     plot_word_cloud(dataframe['processed_sentence'])
-    plot_distribution(x=dataframe['polarity_value'])
+    plot_distribution(dataframe)
+
     clf = train_and_test_svm(dataframe)
 
 

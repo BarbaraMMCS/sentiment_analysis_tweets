@@ -5,6 +5,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.svm import LinearSVC
 
+from common.services import print_service
+from plots.distribution import plot_confusion_matrix
+
 
 def train_and_test_svm(df_training):
     text_clf = Pipeline([
@@ -18,7 +21,9 @@ def train_and_test_svm(df_training):
 
     y_pred = text_clf.predict(X_test)
 
-    print(classification_report(y_test, y_pred))
-    print(metrics.confusion_matrix(y_test, y_pred))
+    print_service("Classificatino report", classification_report(y_test, y_pred))
+
+    cf_matrix = metrics.confusion_matrix(y_test, y_pred)
+    plot_confusion_matrix(cf_matrix)
 
     return text_clf
