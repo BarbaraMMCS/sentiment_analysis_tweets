@@ -1,2 +1,3 @@
-PLOTS_PATH = f"plots/plots/"
-DATA_PATH = f"dataset/reviews.csv"
+PLOTS_PATH = "plots/plots/"
+REVIEWS_PATH = "dataset/reviews.csv"
+DATA_PATH = "dataset/dataframe.csv"
